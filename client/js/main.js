@@ -25,8 +25,10 @@ form.addEventListener("submit", function(event) {
         for (var i = 0; i < json.results.length; i++) {
             let name = json.results[i].artistName
             let img = json.results[i].artworkUrl100
-            let songName = json.results[i].collectionName
+            let songName = json.results[i].trackName
             let audio2 = json.results[i].previewUrl
+            let album =json.results[i].collectionName
+            let release = json.results[i].releaseDate
     
             let show = `
              <div class="col-md-3">
@@ -35,6 +37,8 @@ form.addEventListener("submit", function(event) {
                     <div class="card-body">
                         <h3> ${name} </h3>
                         <h4> ${songName}</h4>
+                        <p>${album}<p>
+                        <p>${release}<p>
                         <audio controls class="audiocontrol">
                         <source value="" src="${audio2}" type="audio/mpeg"> 
                     </div>
